@@ -3,15 +3,17 @@ package main
 import(
   glog "github.com/golang/glog"
   controller "./pkg/controller"
-  kubernetes "k8s.io/client-go/kubernetes"
   clientcmd "k8s.io/client-go/tools/clientcmd"
   parser "./pkg/parser"
 )
 
 func main(){
-  cfg := parser.ParseParameters()
-  // create config based on flags (next: annotations)
-  kubernetesClient := CreateAPIClient(cfg.FedAPIHost, conf.KubeConfig)
+  fedClient, err := parser.ParseParameters()
+  if err != nil{
+    glog.Error("Failed to parse configuration: ", err)
+  }
+  //todo
+  //hapController := controller.NewHAProxyFedIngressController(fedClient)
 }
 
 func CreateAPIClient (fedApiServerHost string, kubeConfig string) (*kubernetes.Clientset, error) {
