@@ -1,9 +1,9 @@
 package parser
 
 import(
-  "k8s.io/client-go/tools/clientcmd"
+  clientcmd "k8s.io/client-go/tools/clientcmd"
   "os"
-  "k8s.io/federation/client/clientset_generated/federation_clientset"
+  util "k8s.io/federation/pkg/kubefed/util"
 )
 
 func ParseParameters () (federationclientset.Interface){
