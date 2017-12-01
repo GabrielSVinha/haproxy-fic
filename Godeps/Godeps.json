@@ -1,0 +1,6 @@
+{
+	"ImportPath": "github.com/GabrielSVinha/haproxy-fic",
+	"GoVersion": "go1.9",
+	"GodepVersion": "v79",
+	"Deps": []
+}
